@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECT PROPERTY DAN METHOD</title>
+</head>
+<body style="font-family: calibri;">
+    <h3>Apa itu Objek Property dan Method</h3>
+   <p>Objek sebenarnya adalah sebuah variabel yang menyimpan nilai (properti) dan fungsi (method).
+    Properti adalah ciri khas dari objek (variabel). Sedangkan method adalah perilaku dari objek (fungsi).
+    Method dapat dibuat dengan cara mengisi nilai (value) dengan sebuah fungsi.
+   </p>
+    <h3>Memanggil dan Mengubah Object Property</h3>
+    <p id="panggil"></p>
+    <p id="hapus" ></p>
+   
+    <script>
+        
+        // membuat property
+        var identitas = {
+            nama : "Muharafi Dalilah",
+            kelas : " X RPL 2",
+            umur : " 16 ",
+
+            // method
+        name : function(){
+            document.write(" ini method nama" + "<br>");
+        },
+        class : function(){
+            document.write(" ini method kelas" + "<br>");
+        },
+        age :function(){
+            document.write(" ini method umur" + "<br>");
+        }
+
+        };
+
+        // memanggil object property
+        document.getElementById("panggil").innerHTML = " My Name is " + identitas["nama"] + " , " + " i am " + identitas["umur"] + " years old. " +
+        " I am part of class " + identitas["kelas"];
+        
+
+      document.write("<h3> Memanggil Objek Method </h3>")
+       identitas.name();
+       identitas.class();
+       identitas.age();
+
+     // mengubah nilai objek property dan method
+    delete identitas.umur;
+    document.getElementById("hapus").innerHTML = 
+    identitas.nama + " is " + identitas.umur  + " years old.  ";
+
+    // mengubah nilai objek method
+    var bio ={
+           namadepan : "Muharafi",
+           namabelakang :"Dalilah",
+           kelas : " X RPL 2",
+           umur : " 16 ",
+           tampilkannama : function(){
+               alert(`Nama Saya Adalah ${this.namadepan} ${this.namabelakang} . Saya Berumur${this.umur}tahun , Saya bagian dari ${this.kelas}.`);
+           }
+       };
+
+       bio.tampilkannama();
+
+ 
+
+    </script>
+</body>
+</html>
